@@ -36,10 +36,10 @@ public class RegisterTest extends BaseTest {
         registerText.click();
 
         WebElement firstName = driver.findElement(By.xpath("//div[@id='rightPanel']/form[1]/table[1]/tbody[1]/tr[1]/td[2]/input"));
-        firstName.sendKeys("Miten");
+        firstName.sendKeys("raj");
 
         WebElement lastName = driver.findElement(By.xpath("//div[@id='rightPanel']/form[1]/table[1]/tbody[1]/tr[2]/td[2]/input"));
-        lastName.sendKeys("Patel");
+        lastName.sendKeys("Patdfhddfhel");
 
         WebElement address = driver.findElement(By.xpath("//div[@id='rightPanel']/form[1]/table[1]/tbody[1]/tr[3]/td[2]/input"));
         address.sendKeys("Stan Stat");
@@ -60,7 +60,7 @@ public class RegisterTest extends BaseTest {
         ssn.sendKeys("223344");
 
         WebElement userName = driver.findElement(By.xpath("//div[@id='rightPanel']/form[1]/table[1]/tbody[1]/tr[10]/td[2]/input"));
-        userName.sendKeys("m4mitzcodebuster100");
+        userName.sendKeys("sdgsgsditzcodebuster10000");
 
         WebElement password = driver.findElement(By.xpath("//div[@id='rightPanel']/form[1]/table[1]/tbody[1]/tr[11]/td[2]/input"));
         password.sendKeys("Codebuster@1234");
@@ -72,7 +72,7 @@ public class RegisterTest extends BaseTest {
         registerButton.click();
 
         String actualText = driver.findElement(By.xpath("//div[@id='rightPanel']/p[1]")).getText();
-        String expectedText = "Your account was created successfully. You are now logged in.";
+        String expectedText = "If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.";
         Assert.assertEquals(actualText, expectedText);
 
     }

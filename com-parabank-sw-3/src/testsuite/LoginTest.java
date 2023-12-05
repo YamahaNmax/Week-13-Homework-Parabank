@@ -30,9 +30,9 @@ public class LoginTest extends BaseTest {
         WebElement loginButton = driver.findElement(By.xpath("//div[@id='leftPanel']/div[1]/form[1]/div[3]/input[1]"));
         loginButton.click();
 
-//        String actualText = driver.findElement(By.xpath("")).getText();
-//        String expectedText = "";
-//        Assert.assertEquals(actualText, expectedText);
+        String actualText = driver.findElement(By.xpath("//div[@id='rightPanel']/div[1]/div[1]/h1")).getText();
+        String expectedText = "Accounts Overview";
+        Assert.assertEquals(actualText, expectedText);
     }
 
     @Test
@@ -52,7 +52,27 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(actualText, expectedText);
     }
 
-    @After
+    @Test
+    public void userShouldLogOutSuccessfully() {
+
+        WebElement userName = driver.findElement(By.xpath("//div[@id='leftPanel']/div[1]/form[1]/div[1]/input[1]"));
+        userName.sendKeys("m4mitzcodebuster100");
+
+        WebElement password = driver.findElement(By.xpath("//div[@id='leftPanel']/div[1]/form[1]/div[2]/input[1]"));
+        password.sendKeys("Codebuster@1234");
+
+        WebElement loginButton = driver.findElement(By.xpath("//div[@id='leftPanel']/div[1]/form[1]/div[3]/input[1]"));
+        loginButton.click();
+
+        WebElement logoutButton = driver.findElement(By.xpath("//div[@id='leftPanel']/ul[1]/li[8]/a"));
+        logoutButton.click();
+
+        String actualText = driver.findElement(By.xpath(" //div[@id='leftPanel']/h2")).getText();
+        String expectedText = "Customer Login";
+        Assert.assertEquals(actualText, expectedText);
+    }
+
+        @After
     public void endTest() {
         closeBrowser();
     }
